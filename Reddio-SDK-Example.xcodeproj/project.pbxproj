@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */; };
+		C1C9967D2A160D240011BF5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967C2A160D240011BF5D /* ContentView.swift */; };
+		C1C9967F2A160D250011BF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C9967E2A160D250011BF5D /* Assets.xcassets */; };
+		C1C996822A160D250011BF5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C996812A160D250011BF5D /* Preview Assets.xcassets */; };
+		C1C9968C2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9968B2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift */; };
+		C1C996962A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996952A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift */; };
+		C1C996982A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996972A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1C996882A160D250011BF5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C9966F2A160D240011BF5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C996762A160D240011BF5D;
+			remoteInfo = "Reddio-SDK-Example";
+		};
+		C1C996922A160D250011BF5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C9966F2A160D240011BF5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C996762A160D240011BF5D;
+			remoteInfo = "Reddio-SDK-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddio-SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleApp.swift; sourceTree = "<group>"; };
+		C1C9967C2A160D240011BF5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C1C9967E2A160D250011BF5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1C996812A160D250011BF5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C1C996872A160D250011BF5D /* Reddio-SDK-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddio-SDK-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C9968B2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleTests.swift; sourceTree = "<group>"; };
+		C1C996912A160D250011BF5D /* Reddio-SDK-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddio-SDK-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C996952A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleUITests.swift; sourceTree = "<group>"; };
+		C1C996972A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1C996742A160D240011BF5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C996842A160D250011BF5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C9968E2A160D250011BF5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1C9966E2A160D240011BF5D = {
+			isa = PBXGroup;
+			children = (
+				C1C996792A160D240011BF5D /* Reddio-SDK-Example */,
+				C1C9968A2A160D250011BF5D /* Reddio-SDK-ExampleTests */,
+				C1C996942A160D250011BF5D /* Reddio-SDK-ExampleUITests */,
+				C1C996782A160D240011BF5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1C996782A160D240011BF5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */,
+				C1C996872A160D250011BF5D /* Reddio-SDK-ExampleTests.xctest */,
+				C1C996912A160D250011BF5D /* Reddio-SDK-ExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1C996792A160D240011BF5D /* Reddio-SDK-Example */ = {
+			isa = PBXGroup;
+			children = (
+				C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */,
+				C1C9967C2A160D240011BF5D /* ContentView.swift */,
+				C1C9967E2A160D250011BF5D /* Assets.xcassets */,
+				C1C996802A160D250011BF5D /* Preview Content */,
+			);
+			path = "Reddio-SDK-Example";
+			sourceTree = "<group>";
+		};
+		C1C996802A160D250011BF5D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C1C996812A160D250011BF5D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C1C9968A2A160D250011BF5D /* Reddio-SDK-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C9968B2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift */,
+			);
+			path = "Reddio-SDK-ExampleTests";
+			sourceTree = "<group>";
+		};
+		C1C996942A160D250011BF5D /* Reddio-SDK-ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C996952A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift */,
+				C1C996972A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift */,
+			);
+			path = "Reddio-SDK-ExampleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1C996762A160D240011BF5D /* Reddio-SDK-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C9969B2A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-Example" */;
+			buildPhases = (
+				C1C996732A160D240011BF5D /* Sources */,
+				C1C996742A160D240011BF5D /* Frameworks */,
+				C1C996752A160D240011BF5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Reddio-SDK-Example";
+			productName = "Reddio-SDK-Example";
+			productReference = C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1C996862A160D250011BF5D /* Reddio-SDK-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C9969E2A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-ExampleTests" */;
+			buildPhases = (
+				C1C996832A160D250011BF5D /* Sources */,
+				C1C996842A160D250011BF5D /* Frameworks */,
+				C1C996852A160D250011BF5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C996892A160D250011BF5D /* PBXTargetDependency */,
+			);
+			name = "Reddio-SDK-ExampleTests";
+			productName = "Reddio-SDK-ExampleTests";
+			productReference = C1C996872A160D250011BF5D /* Reddio-SDK-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1C996902A160D250011BF5D /* Reddio-SDK-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C996A12A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-ExampleUITests" */;
+			buildPhases = (
+				C1C9968D2A160D250011BF5D /* Sources */,
+				C1C9968E2A160D250011BF5D /* Frameworks */,
+				C1C9968F2A160D250011BF5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C996932A160D250011BF5D /* PBXTargetDependency */,
+			);
+			name = "Reddio-SDK-ExampleUITests";
+			productName = "Reddio-SDK-ExampleUITests";
+			productReference = C1C996912A160D250011BF5D /* Reddio-SDK-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1C9966F2A160D240011BF5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C1C996762A160D240011BF5D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C1C996862A160D250011BF5D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C1C996762A160D240011BF5D;
+					};
+					C1C996902A160D250011BF5D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C1C996762A160D240011BF5D;
+					};
+				};
+			};
+			buildConfigurationList = C1C996722A160D240011BF5D /* Build configuration list for PBXProject "Reddio-SDK-Example" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1C9966E2A160D240011BF5D;
+			productRefGroup = C1C996782A160D240011BF5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1C996762A160D240011BF5D /* Reddio-SDK-Example */,
+				C1C996862A160D250011BF5D /* Reddio-SDK-ExampleTests */,
+				C1C996902A160D250011BF5D /* Reddio-SDK-ExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1C996752A160D240011BF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C996822A160D250011BF5D /* Preview Assets.xcassets in Resources */,
+				C1C9967F2A160D250011BF5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C996852A160D250011BF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C9968F2A160D250011BF5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1C996732A160D240011BF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C9967D2A160D240011BF5D /* ContentView.swift in Sources */,
+				C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C996832A160D250011BF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C9968C2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C9968D2A160D250011BF5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C996962A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift in Sources */,
+				C1C996982A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1C996892A160D250011BF5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C996762A160D240011BF5D /* Reddio-SDK-Example */;
+			targetProxy = C1C996882A160D250011BF5D /* PBXContainerItemProxy */;
+		};
+		C1C996932A160D250011BF5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C996762A160D240011BF5D /* Reddio-SDK-Example */;
+			targetProxy = C1C996922A160D250011BF5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C1C996992A160D250011BF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1C9969A2A160D250011BF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1C9969C2A160D250011BF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Reddio-SDK-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1C9969D2A160D250011BF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Reddio-SDK-Example/Preview Content\"";
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C1C9969F2A160D250011BF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reddio-SDK-Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reddio-SDK-Example";
+			};
+			name = Debug;
+		};
+		C1C996A02A160D250011BF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reddio-SDK-Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Reddio-SDK-Example";
+			};
+			name = Release;
+		};
+		C1C996A22A160D250011BF5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Reddio-SDK-Example";
+			};
+			name = Debug;
+		};
+		C1C996A32A160D250011BF5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DLV96N5H94;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Reddio-SDK-Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1C996722A160D240011BF5D /* Build configuration list for PBXProject "Reddio-SDK-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C996992A160D250011BF5D /* Debug */,
+				C1C9969A2A160D250011BF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C9969B2A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C9969C2A160D250011BF5D /* Debug */,
+				C1C9969D2A160D250011BF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C9969E2A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C9969F2A160D250011BF5D /* Debug */,
+				C1C996A02A160D250011BF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C996A12A160D250011BF5D /* Build configuration list for PBXNativeTarget "Reddio-SDK-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C996A22A160D250011BF5D /* Debug */,
+				C1C996A32A160D250011BF5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1C9966F2A160D240011BF5D /* Project object */;
+}
