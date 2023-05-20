@@ -14,6 +14,18 @@
 		C1C9968C2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9968B2A160D250011BF5D /* Reddio_SDK_ExampleTests.swift */; };
 		C1C996962A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996952A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift */; };
 		C1C996982A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996972A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift */; };
+		C1C996B52A1638B80011BF5D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996B02A1638B80011BF5D /* ViewModel.swift */; };
+		C1C996B62A1638B80011BF5D /* web3RPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996B12A1638B80011BF5D /* web3RPC.swift */; };
+		C1C996B72A1638B80011BF5D /* TorusWeb3Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996B22A1638B80011BF5D /* TorusWeb3Utils.swift */; };
+		C1C996B82A1638B80011BF5D /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996B32A1638B80011BF5D /* UserDetailView.swift */; };
+		C1C996B92A1638B80011BF5D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C996B42A1638B80011BF5D /* LoginView.swift */; };
+		C1C996BE2A1639610011BF5D /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996BD2A1639610011BF5D /* BigInt */; };
+		C1C996C12A16398F0011BF5D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996C02A16398F0011BF5D /* CryptoSwift */; };
+		C1C996C42A1639B00011BF5D /* GenericJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996C32A1639B00011BF5D /* GenericJSON */; };
+		C1C996C72A1639C80011BF5D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996C62A1639C80011BF5D /* KeychainSwift */; };
+		C1C996CA2A1639E90011BF5D /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996C92A1639E90011BF5D /* secp256k1 */; };
+		C1C996CE2A163AE40011BF5D /* web3.swift in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996CD2A163AE40011BF5D /* web3.swift */; };
+		C1C996D12A163B0C0011BF5D /* Web3Auth in Frameworks */ = {isa = PBXBuildFile; productRef = C1C996D02A163B0C0011BF5D /* Web3Auth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +56,11 @@
 		C1C996912A160D250011BF5D /* Reddio-SDK-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reddio-SDK-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C996952A160D250011BF5D /* Reddio_SDK_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleUITests.swift; sourceTree = "<group>"; };
 		C1C996972A160D250011BF5D /* Reddio_SDK_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C1C996B02A1638B80011BF5D /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C1C996B12A1638B80011BF5D /* web3RPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = web3RPC.swift; sourceTree = "<group>"; };
+		C1C996B22A1638B80011BF5D /* TorusWeb3Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TorusWeb3Utils.swift; sourceTree = "<group>"; };
+		C1C996B32A1638B80011BF5D /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		C1C996B42A1638B80011BF5D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +68,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1C996BE2A1639610011BF5D /* BigInt in Frameworks */,
+				C1C996CA2A1639E90011BF5D /* secp256k1 in Frameworks */,
+				C1C996D12A163B0C0011BF5D /* Web3Auth in Frameworks */,
+				C1C996C12A16398F0011BF5D /* CryptoSwift in Frameworks */,
+				C1C996C72A1639C80011BF5D /* KeychainSwift in Frameworks */,
+				C1C996CE2A163AE40011BF5D /* web3.swift in Frameworks */,
+				C1C996C42A1639B00011BF5D /* GenericJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +119,11 @@
 			isa = PBXGroup;
 			children = (
 				C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */,
+				C1C996B42A1638B80011BF5D /* LoginView.swift */,
+				C1C996B22A1638B80011BF5D /* TorusWeb3Utils.swift */,
+				C1C996B32A1638B80011BF5D /* UserDetailView.swift */,
+				C1C996B02A1638B80011BF5D /* ViewModel.swift */,
+				C1C996B12A1638B80011BF5D /* web3RPC.swift */,
 				C1C9967C2A160D240011BF5D /* ContentView.swift */,
 				C1C9967E2A160D250011BF5D /* Assets.xcassets */,
 				C1C996802A160D250011BF5D /* Preview Content */,
@@ -143,6 +172,15 @@
 			dependencies = (
 			);
 			name = "Reddio-SDK-Example";
+			packageProductDependencies = (
+				C1C996BD2A1639610011BF5D /* BigInt */,
+				C1C996C02A16398F0011BF5D /* CryptoSwift */,
+				C1C996C32A1639B00011BF5D /* GenericJSON */,
+				C1C996C62A1639C80011BF5D /* KeychainSwift */,
+				C1C996C92A1639E90011BF5D /* secp256k1 */,
+				C1C996CD2A163AE40011BF5D /* web3.swift */,
+				C1C996D02A163B0C0011BF5D /* Web3Auth */,
+			);
 			productName = "Reddio-SDK-Example";
 			productReference = C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +253,15 @@
 				Base,
 			);
 			mainGroup = C1C9966E2A160D240011BF5D;
+			packageReferences = (
+				C1C996BC2A1639610011BF5D /* XCRemoteSwiftPackageReference "BigInt" */,
+				C1C996BF2A16398F0011BF5D /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				C1C996C22A1639B00011BF5D /* XCRemoteSwiftPackageReference "generic-json-swift" */,
+				C1C996C52A1639C80011BF5D /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				C1C996C82A1639E90011BF5D /* XCRemoteSwiftPackageReference "secp256k1" */,
+				C1C996CC2A163AE40011BF5D /* XCRemoteSwiftPackageReference "web3" */,
+				C1C996CF2A163B0C0011BF5D /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */,
+			);
 			productRefGroup = C1C996782A160D240011BF5D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C9967D2A160D240011BF5D /* ContentView.swift in Sources */,
+				C1C996B92A1638B80011BF5D /* LoginView.swift in Sources */,
+				C1C996B52A1638B80011BF5D /* ViewModel.swift in Sources */,
+				C1C996B72A1638B80011BF5D /* TorusWeb3Utils.swift in Sources */,
+				C1C996B62A1638B80011BF5D /* web3RPC.swift in Sources */,
+				C1C996B82A1638B80011BF5D /* UserDetailView.swift in Sources */,
 				C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +482,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,7 +511,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example.Reddio-SDK-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reddio.reddio-sdk-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -583,6 +635,103 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C1C996BC2A1639610011BF5D /* XCRemoteSwiftPackageReference "BigInt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/attaswift/BigInt";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+		C1C996BF2A16398F0011BF5D /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
+		C1C996C22A1639B00011BF5D /* XCRemoteSwiftPackageReference "generic-json-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zoul/generic-json-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		C1C996C52A1639C80011BF5D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		C1C996C82A1639E90011BF5D /* XCRemoteSwiftPackageReference "secp256k1" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boilertalk/secp256k1.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
+		C1C996CC2A163AE40011BF5D /* XCRemoteSwiftPackageReference "web3" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/argentlabs/web3.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.3;
+			};
+		};
+		C1C996CF2A163B0C0011BF5D /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3auth/web3auth-swift-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C1C996BD2A1639610011BF5D /* BigInt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996BC2A1639610011BF5D /* XCRemoteSwiftPackageReference "BigInt" */;
+			productName = BigInt;
+		};
+		C1C996C02A16398F0011BF5D /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996BF2A16398F0011BF5D /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		C1C996C32A1639B00011BF5D /* GenericJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996C22A1639B00011BF5D /* XCRemoteSwiftPackageReference "generic-json-swift" */;
+			productName = GenericJSON;
+		};
+		C1C996C62A1639C80011BF5D /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996C52A1639C80011BF5D /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		C1C996C92A1639E90011BF5D /* secp256k1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996C82A1639E90011BF5D /* XCRemoteSwiftPackageReference "secp256k1" */;
+			productName = secp256k1;
+		};
+		C1C996CD2A163AE40011BF5D /* web3.swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996CC2A163AE40011BF5D /* XCRemoteSwiftPackageReference "web3" */;
+			productName = web3.swift;
+		};
+		C1C996D02A163B0C0011BF5D /* Web3Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C1C996CF2A163B0C0011BF5D /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */;
+			productName = Web3Auth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1C9966F2A160D240011BF5D /* Project object */;
 }

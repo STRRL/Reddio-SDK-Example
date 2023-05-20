@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Web3Auth
 
 @main
-struct Reddio_SDK_ExampleApp: App {
+struct MainApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(vm: ViewModel())
         }
     }
 }
