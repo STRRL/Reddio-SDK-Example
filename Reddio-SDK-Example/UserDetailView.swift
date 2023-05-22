@@ -7,6 +7,8 @@ struct UserDetailView: View {
     @Binding var loggedIn: Bool
     @State private var showingAlert = false
     @StateObject var web3RPC: Web3RPC
+    @ObservedObject var reddioViewModel = ReddioViewModel()
+    
     var body: some View {
         if let user = user {
             List {
@@ -45,7 +47,7 @@ struct UserDetailView: View {
 
                    } label: {
                        HStack{
-                           Text("Get Balance")
+                           Text("Get Balance on layer1")
                            Spacer()
                        }
                    }
@@ -53,36 +55,34 @@ struct UserDetailView: View {
                         Text("\(web3RPC.balance) ETH")
                         
                     }
-                    Button {
-                        web3RPC.signMessage()
-                    } label: {
-                        HStack{
-                            Text("Sign Transaction")
-                            Spacer()
-                        }
-                    }
-                    if(web3RPC.signedMessageHashString != "") {
-                        Text("\(web3RPC.signedMessageHashString)")
-                    }
-                    Button{
-                        web3RPC.sendTransaction()
-                    } label: {
-                        HStack{
-                            Text("Send Transaction")
-                            Spacer()
-                        }
-                    }
-                    if(web3RPC.sentTransactionID != "") {
-                        Text("\(web3RPC.sentTransactionID)")
-                    }
                     
+//                     get balance through reddio api
+                    Button{
+                            reddioViewModel.getBalance()
+                    } label: {
+                        HStack{
+                            Text("Get Balance on layer2")
+                            Spacer()
+                        }
+                    }
+
+                        Text("\(reddioViewModel.balance) ETH")
+
+                    // mint NFT through reddio api
+                    Button{
+                    
+                    } label: {
+                        HStack{
+                            Text("Mint NFT on layer2")
+                            Spacer()
+                        }
+                    }
                 }
                 header: {
                     Text("Blockchain Calls")
                 }
                 
                 
-                Section {
                     Button {
                         Task.detached {
                             do {
@@ -103,7 +103,6 @@ struct UserDetailView: View {
                     .alert(isPresented: $showingAlert) {
                         Alert(title: Text("Error"), message: Text("Logout failed!"), dismissButton: .default(Text("OK")))
                     }
-                }
             }
             .listStyle(.automatic)
         }
