@@ -11,6 +11,7 @@ struct UserDetailView: View {
     
     var body: some View {
         if let user = user {
+            
             List {
                 Section {
                     Text("\(user.privKey ?? "")")
@@ -56,7 +57,7 @@ struct UserDetailView: View {
                         
                     }
                     
-//                     get balance through reddio api
+//                    get balance through reddio api
                     Button{
                             reddioViewModel.getBalance()
                     } label: {
@@ -65,10 +66,15 @@ struct UserDetailView: View {
                             Spacer()
                         }
                     }
-
-                        Text("\(reddioViewModel.balance) ETH")
-
-                    // mint NFT through reddio api
+                    
+//                    display the assets on starkex
+                    ForEach(reddioViewModel.assets) { asset in
+                        VStack(alignment: .leading) {
+                            Text("\(asset.displayValue) \(asset.symbol)")
+                        }
+                    }
+                    
+//                     mint NFT through reddio api
                     Button{
                     
                     } label: {
