@@ -59,13 +59,18 @@ struct UserDetailView: View {
                     
 //                    generate starkey
                     Button{
-                            reddioViewModel.generatestarkey()
+                        web3RPC.signMessage(message: "Generate layer 2 key")
+//                        let swiftString: String = Web3AuthState.loadAndDecryptPrivateKey(user)
+//                        let cString = swiftString.cString(using: .utf8)
+//                        reddioViewModel.generatestarkey(signature: web3RPC.signedMessageHashString, privateKey: Web3AuthState.loadAndDecryptPrivateKey(user))
                     } label: {
                         HStack{
                             Text("Generate Starkey")
                             Spacer()
                         }
                     }
+                    
+                    Text(web3RPC.signedMessageHashString)
                     
                     Text("starkey: \(reddioViewModel.starkey)")
                     Text("publickey: \(reddioViewModel.publickey)")

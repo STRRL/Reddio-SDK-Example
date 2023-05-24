@@ -70,9 +70,9 @@ class Web3RPC : ObservableObject {
         }
     }
     
-    func signMessage() {
+    func signMessage(message: String) {
         do {
-            let val = try account.sign(message: "Hello World")
+            let val = try account.sign(message: message)
             self.signedMessageHashString = val.web3.hexString
             print(self.signedMessageHashString)
         } catch {
