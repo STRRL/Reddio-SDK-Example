@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13036EB2A1BBD93000A5354 /* reddio.swift */; };
-		C180CC5A2A1D92B100F7FA69 /* getOrderParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C180CC592A1D92B100F7FA69 /* getOrderParam.swift */; };
 		C180CC5D2A1D93F500F7FA69 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C180CC5C2A1D93F500F7FA69 /* Alamofire */; };
 		C180CC742A1E463C00F7FA69 /* Reddio.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C180CC732A1E463C00F7FA69 /* Reddio.xcframework */; };
 		C180CC752A1E463C00F7FA69 /* Reddio.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C180CC732A1E463C00F7FA69 /* Reddio.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,7 +65,6 @@
 
 /* Begin PBXFileReference section */
 		C13036EB2A1BBD93000A5354 /* reddio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reddio.swift; sourceTree = "<group>"; };
-		C180CC592A1D92B100F7FA69 /* getOrderParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getOrderParam.swift; sourceTree = "<group>"; };
 		C180CC732A1E463C00F7FA69 /* Reddio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Reddio.xcframework; sourceTree = "<group>"; };
 		C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddio-SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleApp.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				C1C996B32A1638B80011BF5D /* UserDetailView.swift */,
 				C1C996B02A1638B80011BF5D /* ViewModel.swift */,
 				C1C996B12A1638B80011BF5D /* web3RPC.swift */,
-				C180CC592A1D92B100F7FA69 /* getOrderParam.swift */,
 				C13036EB2A1BBD93000A5354 /* reddio.swift */,
 				C1C9967C2A160D240011BF5D /* ContentView.swift */,
 				C1C9967E2A160D250011BF5D /* Assets.xcassets */,
@@ -347,7 +344,6 @@
 				C1C996B52A1638B80011BF5D /* ViewModel.swift in Sources */,
 				C1C996B72A1638B80011BF5D /* TorusWeb3Utils.swift in Sources */,
 				C1C996B62A1638B80011BF5D /* web3RPC.swift in Sources */,
-				C180CC5A2A1D92B100F7FA69 /* getOrderParam.swift in Sources */,
 				C1C996B82A1638B80011BF5D /* UserDetailView.swift in Sources */,
 				C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */,
 				C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */,
