@@ -18,8 +18,13 @@ struct Asset: Identifiable {
 }
 
 class ReddioViewModel: ObservableObject {
-//    @Published var filteredList: [[String: Any]] = []
     @Published var assets: [Asset] = []
+    @Published var starkey: String = ""
+    @Published var publickey: String = ""
+    
+    func generatestarkey() {
+        
+    }
 
     func getBalance() {
         guard let url = URL(string: "https://api-dev.reddio.com/v2/balances?stark_key=0x2209c1318b7021f4938546de573815bd0c5c9de2454e6d1f66766fc345dec80") else {
@@ -80,14 +85,11 @@ class ReddioViewModel: ObservableObject {
     }
 
     
-    func mintNFT() {
-        let parameters = "{\n    \"contract_address\":\"0x113536494406bc039586c1ad9b8f51af664d6ef8\",\n    \"stark_key\":\"0x123\",\n    \"amount\":\"10\"\n}"
+    func orderNFT() {
+        let parameters = "{\n    \"amount\": \"1\",\n    \"price\": \"2000000000\",\n    \"stark_key\": \"0x626ce7cb6cd40cbdd5edd28f9714753c9de30f9e1379216e98cec04e064db96\",\n    \"amount_buy\": \"2000000000\",\n    \"amount_sell\": \"1\",\n    \"token_buy\": \"0x352f9ffd821a525051de2d71126113505a7b0a73d98dbc0ac0ff343cfbdef5e\",\n    \"token_sell\": \"0x4009ca493af0ee021faed912755cbb688130e0b17495b2453ab550a09774cea\",\n    \"vault_id_buy\": \"23403615\",\n    \"vault_id_sell\": \"23402806\",\n    \"expiration_timestamp\": 4194303,\n    \"base_token\": \"0x352f9ffd821a525051de2d71126113505a7b0a73d98dbc0ac0ff343cfbdef5e\",\n    \"quote_token\": \"0x4009ca493af0ee021faed912755cbb688130e0b17495b2453ab550a09774cea\",\n    \"nonce\": 83,\n    \"signature\": {\n        \"r\": \"0x6cd1f1055c3a3bd907fa5d9932e5ef3c76099f0899cd670be1e87c23ff5bb63\",\n        \"s\": \"0x551c077e228723d9ae87ab1d89ee4d63c4e31faa094867b6ba74aed1daa04c0\"\n    },\n    \"fee_info\": {\n        \"fee_limit\": 40000000,\n        \"token_id\": \"0x352f9ffd821a525051de2d71126113505a7b0a73d98dbc0ac0ff343cfbdef5e\",\n        \"source_vault_id\": 23403615\n    },\n    \"direction\": 0,\n    \"marketplace_uuid\": \"\"\n}"
         let postData = parameters.data(using: .utf8)
 
-        var request = URLRequest(url: URL(string: "https://api-dev.reddio.com/v1/mints")!,timeoutInterval: Double.infinity)
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-        request.addValue("YOUR_API_KEY_HERE", forHTTPHeaderField: "X-API-Key")
-
+        var request = URLRequest(url: URL(string: "https://api-dev.reddio.com/v1/order")!,timeoutInterval: Double.infinity)
         request.httpMethod = "POST"
         request.httpBody = postData
 

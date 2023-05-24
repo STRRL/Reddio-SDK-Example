@@ -57,6 +57,19 @@ struct UserDetailView: View {
                         
                     }
                     
+//                    generate starkey
+                    Button{
+                            reddioViewModel.generatestarkey()
+                    } label: {
+                        HStack{
+                            Text("Generate Starkey")
+                            Spacer()
+                        }
+                    }
+                    
+                    Text("starkey: \(reddioViewModel.starkey)")
+                    Text("publickey: \(reddioViewModel.publickey)")
+                    
 //                    get balance through reddio api
                     Button{
                             reddioViewModel.getBalance()
@@ -74,12 +87,12 @@ struct UserDetailView: View {
                         }
                     }
                     
-//                     mint NFT through reddio api
+//                     order NFT through reddio api
                     Button{
                     
                     } label: {
                         HStack{
-                            Text("Mint NFT on layer2")
+                            Text("Order NFT on layer2")
                             Spacer()
                         }
                     }
