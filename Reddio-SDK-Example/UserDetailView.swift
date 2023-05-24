@@ -69,7 +69,6 @@ struct UserDetailView: View {
                             Spacer()
                         }
                     }
-                    
                     Text(web3RPC.signedMessageHashString)
                     
                     Text("starkey: \(reddioViewModel.starkey)")
