@@ -24,9 +24,11 @@ class ReddioViewModel: ObservableObject {
     @Published var starkey: String = ""
     @Published var publickey: String = ""
     
-    func generatestarkey(signature : UnsafePointer<CChar>?, privateKey: UnsafeMutablePointer<CChar>?) {
-        print(Reddio.get_private_key_from_eth_signature(signature, privateKey))
-//        Reddio.get_private_key_from_eth_signature(<#T##eth_signature: UnsafePointer<CChar>!##UnsafePointer<CChar>!#>, <#T##private_key_str: UnsafeMutablePointer<CChar>!##UnsafeMutablePointer<CChar>??#>)
+    func generatestarkey(signature : String) {
+        let ethSignature = signature
+        let result =  UnsafeMutablePointer<CChar>.allocate(capacity: 65)
+        Reddio.get_private_key_from_eth_signature((ethSignature as NSString).utf8String, result)
+        print(String(cString: result))
     }
 
     func getBalance() {

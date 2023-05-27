@@ -75,7 +75,6 @@ class Web3RPC : ObservableObject {
             let val = try account.sign(message: message)
             self.signedMessageHashString = val.web3.hexString
             print(self.signedMessageHashString)
-            print(Web3AuthState.loadAndDecryptPrivateKey(user))
         } catch {
             self.signedMessageHashString = "Something Went Wrong"
         }
