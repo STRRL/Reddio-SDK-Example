@@ -5,7 +5,7 @@ import web3
 public typealias Ether = Double
 public typealias Wei = BigUInt
 
-public final class TorusWeb3Utils {
+public enum TorusWeb3Utils {
     public static func timeMinToSec(val: Double) -> Double {
         return val * 60
     }
@@ -45,7 +45,7 @@ public final class TorusWeb3Utils {
 
     // Only used for calcurating gas price and gas limit.
     public static func toWei(GWei: Double) -> Wei {
-        return Wei(GWei * 1000000000)
+        return Wei(GWei * 1_000_000_000)
     }
 }
 

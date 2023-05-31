@@ -1,4 +1,0 @@
-module Reddio {
-    header "reddio.h"
-    export *
-}

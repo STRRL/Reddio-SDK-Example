@@ -46,6 +46,15 @@
       }
     },
     {
+      "identity" : "reddiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/reddio-com/ReddioKit",
+      "state" : {
+        "revision" : "71b29050578fdc440126ae9d9b8e77553c27f850",
+        "version" : "0.1.0"
+      }
+    },
+    {
       "identity" : "secp256k1.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Boilertalk/secp256k1.swift",

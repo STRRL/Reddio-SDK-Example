@@ -2,11 +2,11 @@
 import BigInt
 import Combine
 import Foundation
+import SwiftUI
 import web3
 import Web3Auth
-import SwiftUI
 
-class Web3RPC : ObservableObject {
+class Web3RPC: ObservableObject {
     var user: Web3AuthState
     private var client: EthereumClientProtocol
     public var address: EthereumAddress
@@ -14,31 +14,30 @@ class Web3RPC : ObservableObject {
     private var latestBlock = 0
     private var chainID = 5
     private var RPC_URL = "https://rpc.ankr.com/eth_goerli"
-    
+
     @Published var balance: Double = 0
-    @Published var signedMessageHashString:String = ""
-    @Published var sentTransactionID:String = ""
+    @Published var signedMessageHashString: String = ""
+    @Published var sentTransactionID: String = ""
     @Published var publicAddress: String = ""
-    
-    init?(user: Web3AuthState){
+
+    init?(user: Web3AuthState) {
         self.user = user
-        do{
+        do {
             client = EthereumClient(url: URL(string: RPC_URL)!)
-            account = try EthereumAccount(keyStorage: user )
+            account = try EthereumAccount(keyStorage: user)
             address = account.address
         } catch {
-             return nil
+            return nil
         }
     }
-    
+
     func getAccounts() {
-        self.publicAddress = address.value
+        publicAddress = address.value
         print(address.value)
     }
-    
 
     func checkLatestBlockChanged() async -> Bool {
-        return await withCheckedContinuation({ continuation in
+        return await withCheckedContinuation { continuation in
             client.eth_blockNumber { [weak self] _, val in
                 guard let val = val, self?.latestBlock != val else {
                     continuation.resume(returning: false)
@@ -47,9 +46,9 @@ class Web3RPC : ObservableObject {
                 self?.latestBlock = val
                 continuation.resume(returning: true)
             }
-        })
+        }
     }
-    
+
     func getBalance() {
         Task {
             let blockChanged = await checkLatestBlockChanged()
@@ -66,22 +65,29 @@ class Web3RPC : ObservableObject {
                 }
             }
             print(balance)
-            
         }
     }
-    
-    func signMessage(message: String) {
+
+    func signStructuredMessage(message _: String) {
+        let typedData = TypedData(types: [
+            "EIP712Domain": [TypedVariable(name: "chainId", type: "uint256")],
+            "reddio": [TypedVariable(name: "contents", type: "string")],
+        ],
+        primaryType: "reddio",
+        domain: ["chainId": 5],
+        message: ["contents": "Generate layer 2 key"])
         do {
-            let val = try account.sign(message: message)
-            self.signedMessageHashString = val.web3.hexString
-            print(self.signedMessageHashString)
+            let val = try account.signMessage(message: typedData)
+
+            signedMessageHashString = val
+            print(signedMessageHashString)
         } catch {
-            self.signedMessageHashString = "Something Went Wrong"
+            signedMessageHashString = "Something Went Wrong"
         }
     }
-    
-    func sendTransaction()  {
-        Task{
+
+    func sendTransaction() {
+        Task {
             do {
                 let val = try await transferAsset(sendTo: "0x24BfD1c2D000EC276bb2b6af38C47390Ae6B5FF0", amount: 0.0001, maxTip: 0.0001)
                 self.sentTransactionID = val
@@ -89,12 +95,10 @@ class Web3RPC : ObservableObject {
             } catch {
                 self.sentTransactionID = "Something Went Wrong"
             }
-            
         }
-        
     }
-    
-    func transferAsset(sendTo: String, amount: Double, maxTip: Double, gasLimit: BigUInt = 21000) async throws -> String {
+
+    func transferAsset(sendTo: String, amount: Double, maxTip _: Double, gasLimit: BigUInt = 21000) async throws -> String {
         let gasPrice = try await client.eth_gasPrice()
         let maxTipInGwie = BigUInt(TorusWeb3Utils.toEther(Gwie: BigUInt(amount)))
         let totalGas = gasPrice + maxTipInGwie
@@ -105,27 +109,20 @@ class Web3RPC : ObservableObject {
         let val = try await client.eth_sendRawTransaction(signed.transaction, withAccount: account)
         return val
     }
-    
 }
 
-extension Web3AuthState:EthereumKeyStorageProtocol {
-    public func storePrivateKey(key: Data) throws {
-        
-    }
-    
+extension Web3AuthState: EthereumKeyStorageProtocol {
+    public func storePrivateKey(key _: Data) throws {}
+
     public func loadPrivateKey() throws -> Data {
-        guard let privKeyData = self.privKey?.web3.hexData else {
+        guard let privKeyData = privKey?.web3.hexData else {
             throw SampleAppError.somethingWentWrong
         }
         return privKeyData
-        
     }
-    
-    
 }
 
-public enum SampleAppError:Error{
-    
+public enum SampleAppError: Error {
     case noInternetConnection
     case decodingError
     case somethingWentWrong

@@ -40,11 +40,11 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
+
     func loginEmailPasswordless(provider: Web3AuthProvider) {
         Task {
             do {
-                let result = try await Web3Auth(.init(clientId: clientId, network: network)).login(W3ALoginParams(loginProvider: provider, extraLoginOptions: ExtraLoginOptions(display: nil, prompt: nil, max_age: nil, ui_locales: nil, id_token_hint: nil, id_token: nil, login_hint: "hello+iosexample@web3auth.io", acr_values: nil, scope: nil, audience: nil, connection: nil, domain: nil, client_id: nil, redirect_uri: nil, leeway: nil, verifierIdField: nil, isVerifierIdCaseSensitive: nil)))
+                let result = try await Web3Auth(.init(clientId: clientId, network: network)).login(W3ALoginParams(loginProvider: provider, extraLoginOptions: ExtraLoginOptions(display: nil, prompt: nil, max_age: nil, ui_locales: nil, id_token_hint: nil, id_token: nil, login_hint: "reddio-ios-web3-auth@strrl.dev", acr_values: nil, scope: nil, audience: nil, connection: nil, domain: nil, client_id: nil, redirect_uri: nil, leeway: nil, verifierIdField: nil, isVerifierIdCaseSensitive: nil)))
                 await MainActor.run(body: {
                     user = result
                     loggedIn = true
@@ -56,7 +56,7 @@ class ViewModel: ObservableObject {
             }
         }
     }
-    
+
     func whitelabelLogin() {
         Task.detached { [unowned self] in
             do {
@@ -65,7 +65,8 @@ class ViewModel: ObservableObject {
                     network: network,
                     whiteLabel: W3AWhiteLabelData(
                         name: "Web3Auth iOS Example",
-                        dark: true, theme: ["primary": "#123456"])
+                        dark: true, theme: ["primary": "#123456"]
+                    )
                 ))
                 let result = try await self.web3Auth?
                     .login(W3ALoginParams(loginProvider: .GOOGLE))
@@ -73,7 +74,7 @@ class ViewModel: ObservableObject {
                     user = result
                     loggedIn = true
                 })
-            } catch let error {
+            } catch {
                 print(error)
             }
         }

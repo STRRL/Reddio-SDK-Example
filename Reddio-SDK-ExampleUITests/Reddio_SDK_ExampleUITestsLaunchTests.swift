@@ -8,7 +8,6 @@
 import XCTest
 
 final class Reddio_SDK_ExampleUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

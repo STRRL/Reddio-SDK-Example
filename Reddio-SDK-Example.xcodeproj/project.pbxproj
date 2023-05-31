@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C4CA1DF2A27B0E700AAFC32 /* ReddioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0C4CA1DE2A27B0E700AAFC32 /* ReddioKit */; };
 		C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13036EB2A1BBD93000A5354 /* reddio.swift */; };
 		C180CC5D2A1D93F500F7FA69 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C180CC5C2A1D93F500F7FA69 /* Alamofire */; };
-		C180CC742A1E463C00F7FA69 /* Reddio.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C180CC732A1E463C00F7FA69 /* Reddio.xcframework */; };
-		C180CC752A1E463C00F7FA69 /* Reddio.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C180CC732A1E463C00F7FA69 /* Reddio.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */; };
 		C1C9967D2A160D240011BF5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967C2A160D240011BF5D /* ContentView.swift */; };
 		C1C9967F2A160D250011BF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C9967E2A160D250011BF5D /* Assets.xcassets */; };
@@ -56,7 +55,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C180CC752A1E463C00F7FA69 /* Reddio.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,7 +63,6 @@
 
 /* Begin PBXFileReference section */
 		C13036EB2A1BBD93000A5354 /* reddio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reddio.swift; sourceTree = "<group>"; };
-		C180CC732A1E463C00F7FA69 /* Reddio.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Reddio.xcframework; sourceTree = "<group>"; };
 		C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddio-SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleApp.swift; sourceTree = "<group>"; };
 		C1C9967C2A160D240011BF5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,7 +93,7 @@
 				C1C996C72A1639C80011BF5D /* KeychainSwift in Frameworks */,
 				C1C996CE2A163AE40011BF5D /* web3.swift in Frameworks */,
 				C1C996C42A1639B00011BF5D /* GenericJSON in Frameworks */,
-				C180CC742A1E463C00F7FA69 /* Reddio.xcframework in Frameworks */,
+				0C4CA1DF2A27B0E700AAFC32 /* ReddioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +117,6 @@
 		C180CC722A1E463C00F7FA69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C180CC732A1E463C00F7FA69 /* Reddio.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,6 +210,7 @@
 				C1C996CD2A163AE40011BF5D /* web3.swift */,
 				C1C996D02A163B0C0011BF5D /* Web3Auth */,
 				C180CC5C2A1D93F500F7FA69 /* Alamofire */,
+				0C4CA1DE2A27B0E700AAFC32 /* ReddioKit */,
 			);
 			productName = "Reddio-SDK-Example";
 			productReference = C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */;
@@ -296,6 +293,7 @@
 				C1C996CC2A163AE40011BF5D /* XCRemoteSwiftPackageReference "web3" */,
 				C1C996CF2A163B0C0011BF5D /* XCRemoteSwiftPackageReference "web3auth-swift-sdk" */,
 				C180CC5B2A1D93F500F7FA69 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0C4CA1DD2A27B0E700AAFC32 /* XCRemoteSwiftPackageReference "ReddioKit" */,
 			);
 			productRefGroup = C1C996782A160D240011BF5D /* Products */;
 			projectDirPath = "";
@@ -675,6 +673,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0C4CA1DD2A27B0E700AAFC32 /* XCRemoteSwiftPackageReference "ReddioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/reddio-com/ReddioKit";
+			requirement = {
+				kind = exactVersion;
+				version = 0.1.0;
+			};
+		};
 		C180CC5B2A1D93F500F7FA69 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -742,6 +748,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C4CA1DE2A27B0E700AAFC32 /* ReddioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C4CA1DD2A27B0E700AAFC32 /* XCRemoteSwiftPackageReference "ReddioKit" */;
+			productName = ReddioKit;
+		};
 		C180CC5C2A1D93F500F7FA69 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C180CC5B2A1D93F500F7FA69 /* XCRemoteSwiftPackageReference "Alamofire" */;
