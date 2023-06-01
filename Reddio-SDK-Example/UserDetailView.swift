@@ -6,6 +6,9 @@ struct UserDetailView: View {
     @State var user: Web3AuthState?
     @Binding var loggedIn: Bool
     @State private var showingAlert = false
+    @State private var nftTokenIdToBuy = ""
+    @State private var nftPriceToBuy = ""
+
     @StateObject var web3RPC: Web3RPC
     @ObservedObject var reddioViewModel = ReddioViewModel()
 
@@ -87,12 +90,16 @@ struct UserDetailView: View {
                         }
                     }
 
+                    TextField("Buy REDDIO721, TokenID", text: $nftTokenIdToBuy)
+                    TextField("Expected Buy Price", text: $nftPriceToBuy)
+
 //                     order NFT through reddio api
                     Button {
+                        reddioViewModel.buyREDDIO721NFT(tokenId: nftTokenIdToBuy, price: nftPriceToBuy)
 //                        reddioViewModel.orderNFT()
                     } label: {
                         HStack {
-                            Text("Order NFT on layer2")
+                            Text("Buy NFT on layer2")
                             Spacer()
                         }
                     }

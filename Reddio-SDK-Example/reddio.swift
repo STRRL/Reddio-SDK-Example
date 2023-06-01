@@ -92,4 +92,14 @@ class ReddioViewModel: ObservableObject {
         }
         task.resume()
     }
+
+    func buyREDDIO721NFT(tokenId: String, price: String) {
+        Task {
+            do {
+                let orderResponse = try await buyNFTReddio721(starkPrivateKey: starkPrivateKey, starkPublicKey: starkPublicKey, tokenId: tokenId, price: price)
+            } catch {
+                print("\(error)")
+            }
+        }
+    }
 }

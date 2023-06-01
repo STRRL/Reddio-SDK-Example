@@ -747,7 +747,7 @@
 			repositoryURL = "https://github.com/reddio-com/ReddioKit";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.1;
+				version = 0.1.2;
 			};
 		};
 		C180CC5B2A1D93F500F7FA69 /* XCRemoteSwiftPackageReference "Alamofire" */ = {

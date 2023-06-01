@@ -55,7 +55,11 @@ func buyNFTReddio721(
     )
     let jsonString = try JSONEncoder().encode(jsonPayload)
 
+    print(String(data: jsonString, encoding: .utf8)!)
+
     var request = URLRequest(url: URL(string: "https://api-dev.reddio.com/v1/order")!, timeoutInterval: Double.infinity)
+    request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type") // the request is JSON
+    request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept") // the expected response is also JSON
     request.httpMethod = "POST"
     request.httpBody = jsonString
 
@@ -84,7 +88,7 @@ func buildSignedBuyOrderMessage(
     let quoteToken = orderInfoResponse.assetIds[1]
 
     let quantizedPrice = try await quantizedAmount(amount: price, type: baseTokenType, contractAddress: baseTokenContract)
-    let amountBuy = (Double(quantizedPrice)! * Double(amount)!).description
+    let amountBuy = Int64(Double(quantizedPrice)! * Double(amount)!).description
     let formatPrice = quantizedPrice
 
     var message = OrderMessage(

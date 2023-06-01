@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/reddio-com/ReddioKit",
       "state" : {
-        "revision" : "8d4e5494e3914bdcba4b10fc1e316c0ee1993e85",
-        "version" : "0.1.1"
+        "revision" : "efb6d99b5a8d7b6f45a2a930a73daec65e3d978d",
+        "version" : "0.1.2"
       }
     },
     {
