@@ -31,14 +31,14 @@ struct LoginView: View {
                 }
             )
 
-            Button(
-                action: {
-                    vm.loginEmailPasswordless(provider: .EMAIL_PASSWORDLESS)
-                },
-                label: {
-                    Text("Sign In with Email Passwordless")
-                }
-            )
+//            Button(
+//                action: {
+//                    vm.loginEmailPasswordless(provider: .EMAIL_PASSWORDLESS)
+//                },
+//                label: {
+//                    Text("Sign In with Email Passwordless")
+//                }
+//            )
 
             Button(
                 action: {
