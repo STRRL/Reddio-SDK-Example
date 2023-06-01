@@ -89,7 +89,7 @@ struct UserDetailView: View {
 
 //                     order NFT through reddio api
                     Button {
-                        reddioViewModel.orderNFT()
+//                        reddioViewModel.orderNFT()
                     } label: {
                         HStack {
                             Text("Order NFT on layer2")

@@ -31,4 +31,9 @@ final class Reddio_SDK_ExampleTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+
+    func testTryOrderInfo() async throws {
+        let info = try await orderInfo(starkKey: "0x13a69a1b7a5f033ee2358ebb8c28fd5a6b86d42e30a61845d655d3c7be4ad0e", contract1: "0x941661bd1134dc7cc3d107bf006b8631f6e65ad5", contract2: "ETH")
+        print(info)
+    }
 }
