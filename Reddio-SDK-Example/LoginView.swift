@@ -2,6 +2,8 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var vm: ViewModel
+
+    @State var passwordlessEmail = ""
     var body: some View {
         List {
             Button(
@@ -31,14 +33,15 @@ struct LoginView: View {
                 }
             )
 
-//            Button(
-//                action: {
-//                    vm.loginEmailPasswordless(provider: .EMAIL_PASSWORDLESS)
-//                },
-//                label: {
-//                    Text("Sign In with Email Passwordless")
-//                }
-//            )
+            TextField("Passwordless Login Email", text: $passwordlessEmail)
+            Button(
+                action: {
+                    vm.loginEmailPasswordless(provider: .EMAIL_PASSWORDLESS, email: passwordlessEmail)
+                },
+                label: {
+                    Text("Sign In with Email Passwordless")
+                }
+            )
 
             Button(
                 action: {
