@@ -9,31 +9,18 @@
 import XCTest
 
 final class Reddio_SDK_ExampleTests: XCTestCase {
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
     func testTryOrderInfo() async throws {
-        let info = try await orderInfo(starkKey: "0x13a69a1b7a5f033ee2358ebb8c28fd5a6b86d42e30a61845d655d3c7be4ad0e", contract1: "0x941661bd1134dc7cc3d107bf006b8631f6e65ad5", contract2: "ETH")
+        let info = try await getOrderInfo(starkKey: "0x13a69a1b7a5f033ee2358ebb8c28fd5a6b86d42e30a61845d655d3c7be4ad0e", contract1: "ERC721:0x941661bd1134dc7cc3d107bf006b8631f6e65ad5", contract2: "ETH:ETH")
         print(info)
+    }
+
+    func testTryContractInfo() async throws {
+        let info = try await getContractInfo(type: "ETH", contractAddress: "ETH")
+        print(info)
+    }
+
+    func testTryQuantizedAmount() async throws {
+        let out = try await quantizedAmount(amount: "0.1", type: "eth", contractAddress: "eth")
+        print(out)
     }
 }

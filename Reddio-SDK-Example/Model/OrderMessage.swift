@@ -37,12 +37,10 @@ struct OrderMessage: Hashable, Codable {
     var expirationTimestamp: Int64
     var nonce: Int64
     var signature: Signature
-    var accountId: String
-    var direction: Int64
+    var direction: Int
     var feeInfo: FeeInfo
     var price: String
     var starkKey: String
-    var stopLimitTimeInForce: String
 
     enum CodingKeys: String, CodingKey {
         case amount
@@ -57,11 +55,9 @@ struct OrderMessage: Hashable, Codable {
         case expirationTimestamp = "expiration_timestamp"
         case nonce
         case signature
-        case accountId = "account_id"
         case direction
         case feeInfo = "fee_info"
         case price
         case starkKey = "stark_key"
-        case stopLimitTimeInForce = "stop_limit_time_in_force"
     }
 }

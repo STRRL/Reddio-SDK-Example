@@ -9,9 +9,9 @@ import Foundation
 
 struct ResponseWrapper<T: Codable>: Codable {
     var status: String
-    var error: String
-    var errorCode: Int64
-    var data: T
+    var error: String?
+    var errorCode: Int64?
+    var data: T?
 
     enum CodingKeys: String, CodingKey {
         case status

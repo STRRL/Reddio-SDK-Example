@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import ReddioKit
 // buy
 let DIRECTION_BID = 1
 // sell
@@ -14,7 +14,7 @@ let DIRECTION_ASK = 0
 
 let REDDIO721_CONTRACT_ADDRESS = "0x941661bd1134dc7cc3d107bf006b8631f6e65ad5"
 
-func orderInfo(
+func getOrderInfo(
     starkKey: String,
     contract1: String,
     contract2: String
@@ -22,7 +22,17 @@ func orderInfo(
     let url = URL(string: "https://api-dev.reddio.com/v1/order/info?stark_key=\(starkKey)&contract1=\(contract1)&contract2=\(contract2)")!
     let (data, _) = try await URLSession.shared.data(from: url)
     let responseBody = try JSONDecoder().decode(ResponseWrapper<OrderInfoResponse>.self, from: data)
-    return responseBody.data
+    return responseBody.data!
+}
+
+func getContractInfo(
+    type: String,
+    contractAddress: String
+) async throws -> ContractInfo {
+    let url = URL(string: "https://api-dev.reddio.com/v1/contract_info?type=\(type)&contract_address=\(contractAddress)")!
+    let (data, _) = try await URLSession.shared.data(from: url)
+    let responseBody = try JSONDecoder().decode(ResponseWrapper<ContractInfo>.self, from: data)
+    return responseBody.data!
 }
 
 func buyNFTReddio721(
@@ -34,40 +44,100 @@ func buyNFTReddio721(
     let jsonPayload = try await buildSignedBuyOrderMessage(
         starkPrivateKey: starkPrivateKey,
         starkPublicKey: starkPublicKey,
-        baseTokenType: "ETH", baseTokenContract: "ETH",
+        baseTokenType: "ETH",
+        baseTokenContract: "ETH",
         tokenType: "ERC721",
         // REDDIO721
         tokenContractAddress: REDDIO721_CONTRACT_ADDRESS,
         tokenId: tokenId,
-        price: price, amount: "1"
+        price: price,
+        amount: "1"
     )
+    let jsonString = try JSONEncoder().encode(jsonPayload)
 
     var request = URLRequest(url: URL(string: "https://api-dev.reddio.com/v1/order")!, timeoutInterval: Double.infinity)
     request.httpMethod = "POST"
-    request.httpBody = jsonPayload.data(using: .utf8)
+    request.httpBody = jsonString
 
     let (data, _) = try await URLSession.shared.data(for: request)
     let responseBody = try JSONDecoder().decode(ResponseWrapper<OrderResponse>.self, from: data)
-    return responseBody.data
+    return responseBody.data!
 }
 
 func buildSignedBuyOrderMessage(
-    starkPrivateKey _: String,
+    starkPrivateKey: String,
     starkPublicKey: String,
     baseTokenType: String,
     baseTokenContract: String,
     tokenType: String,
     tokenContractAddress: String,
-    tokenId _: String,
-    price _: String,
-    amount _: String
-) async throws -> String {
-    let orderInfoResponse = try await orderInfo(
+    tokenId: String,
+    price: String,
+    amount: String
+) async throws -> OrderMessage {
+    let orderInfoResponse = try await getOrderInfo(
         starkKey: starkPublicKey,
         contract1: "\(baseTokenType):\(baseTokenContract)",
-        contract2: "\(tokenType):\(tokenContractAddress)"
+        contract2: "\(tokenType):\(tokenContractAddress):\(tokenId)"
     )
     let vaultIds = orderInfoResponse.vaultIds
     let quoteToken = orderInfoResponse.assetIds[1]
-    return ""
+
+    let quantizedPrice = try await quantizedAmount(amount: price, type: baseTokenType, contractAddress: baseTokenContract)
+    let amountBuy = (Double(quantizedPrice)! * Double(amount)!).description
+    let formatPrice = quantizedPrice
+
+    var message = OrderMessage(
+        amount: amount,
+        amountBuy: amount,
+        amountSell: amountBuy,
+        tokenBuy: quoteToken,
+        tokenSell: orderInfoResponse.baseToken,
+        baseToken: orderInfoResponse.baseToken,
+        quoteToken: quoteToken,
+        vaultIdBuy: vaultIds[1],
+        vaultIdSell: vaultIds[0],
+        expirationTimestamp: 4_194_303,
+        nonce: orderInfoResponse.nonce,
+        signature: Signature(r: "", s: ""),
+        direction: DIRECTION_BID,
+        feeInfo: FeeInfo(
+            feeLimit: Int64(Double(orderInfoResponse.feeRate)! * Double(amountBuy)!),
+            tokenId: orderInfoResponse.feeToken,
+            sourceVaultId: Int64(vaultIds[0])!
+        ),
+        price: formatPrice,
+        starkKey: starkPublicKey
+    )
+
+    let hash = try ReddioKit.getLimitOrderMsgHashWithFee(
+        vaultSell: Int64(message.vaultIdSell)!,
+        vaultBuy: Int64(message.vaultIdBuy)!,
+        amountSell: Int64(message.amountSell)!,
+        amountBuy: Int64(message.amountBuy)!,
+        tokenSell: message.tokenSell,
+        tokenBuy: message.tokenBuy,
+        nonce: message.nonce,
+        expirationTimestamp: message.expirationTimestamp,
+        feeToken: message.feeInfo.tokenId,
+        feeVaultId: message.feeInfo.sourceVaultId,
+        feeLimit: message.feeInfo.feeLimit
+    )
+    let sign = try ReddioKit.sign(privateKey: starkPrivateKey, msgHash: hash, seed: nil)
+    message.signature.r = sign.r
+    message.signature.s = sign.s
+    return message
+}
+
+func quantizedAmount(
+    amount: String,
+    type: String,
+    contractAddress: String
+) async throws -> String {
+    let contractInfo = await try getContractInfo(type: type, contractAddress: contractAddress)
+
+    let amountDecimal = Decimal(string: amount)!
+    let result = amountDecimal * Decimal(pow(Double(10), Double(contractInfo.decimals))) / Decimal(string: contractInfo.quantum)!
+
+    return result.description
 }
