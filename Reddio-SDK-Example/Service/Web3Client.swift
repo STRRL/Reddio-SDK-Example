@@ -16,14 +16,20 @@ class Web3Client {
 
     private var ethAccount: EthereumAccount
     private var client: EthereumClientProtocol
+    private var ethPrivateKey: String
 
     init(ethPrivateKey: String) throws {
+        self.ethPrivateKey = ethPrivateKey
         client = EthereumClient(url: URL(string: Web3Client.RPC_URL)!)
         ethAccount = try EthereumAccount(keyStorage: LiterallyEthKeyStorage(ethPrivateKey: ethPrivateKey))
     }
 
     func getAddress() -> EthereumAddress {
         return ethAccount.address
+    }
+
+    func getEthPrivateKey() -> String {
+        return ethPrivateKey
     }
 
     func fetchBalance() async throws -> Double {
@@ -52,4 +58,9 @@ class Web3Client {
         let starkPrivateKey = try getStarkPrivateKey()
         return try "0x" + (ReddioKit.getPublicKey(privateKey: starkPrivateKey))
     }
+}
+
+struct NFT {
+    var contractAddress: String
+    var tokenId: String
 }

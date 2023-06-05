@@ -28,6 +28,9 @@
 		0C94FE992A2DC87500AAFC32 /* Data+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FE982A2DC87500AAFC32 /* Data+HexString.swift */; };
 		0C94FE9D2A2DCE6400AAFC32 /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FE9C2A2DCE6400AAFC32 /* AssetsView.swift */; };
 		0C94FEA02A2DCF7300AAFC32 /* NFTPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FE9F2A2DCF7300AAFC32 /* NFTPreview.swift */; };
+		0C94FEA42A2DDA9A00AAFC32 /* MarketplaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FEA32A2DDA9A00AAFC32 /* MarketplaceView.swift */; };
+		0C94FEA62A2DDAC200AAFC32 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FEA52A2DDAC200AAFC32 /* AccountView.swift */; };
+		0C94FEA92A2DE18800AAFC32 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C94FEA82A2DE18800AAFC32 /* HomeView.swift */; };
 		C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13036EB2A1BBD93000A5354 /* reddio.swift */; };
 		C180CC5D2A1D93F500F7FA69 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C180CC5C2A1D93F500F7FA69 /* Alamofire */; };
 		C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */; };
@@ -93,6 +96,9 @@
 		0C94FE982A2DC87500AAFC32 /* Data+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+HexString.swift"; sourceTree = "<group>"; };
 		0C94FE9C2A2DCE6400AAFC32 /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 		0C94FE9F2A2DCF7300AAFC32 /* NFTPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTPreview.swift; sourceTree = "<group>"; };
+		0C94FEA32A2DDA9A00AAFC32 /* MarketplaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketplaceView.swift; sourceTree = "<group>"; };
+		0C94FEA52A2DDAC200AAFC32 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		0C94FEA82A2DE18800AAFC32 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C13036EB2A1BBD93000A5354 /* reddio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reddio.swift; sourceTree = "<group>"; };
 		C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddio-SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleApp.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 				C1C996B02A1638B80011BF5D /* ViewModel.swift */,
 				0C94FE9C2A2DCE6400AAFC32 /* AssetsView.swift */,
 				0C94FE9F2A2DCF7300AAFC32 /* NFTPreview.swift */,
+				0C94FEA32A2DDA9A00AAFC32 /* MarketplaceView.swift */,
+				0C94FEA52A2DDAC200AAFC32 /* AccountView.swift */,
+				0C94FEA82A2DE18800AAFC32 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +437,7 @@
 				0C94FEA02A2DCF7300AAFC32 /* NFTPreview.swift in Sources */,
 				C1C996B92A1638B80011BF5D /* LoginView.swift in Sources */,
 				C1C996B52A1638B80011BF5D /* ViewModel.swift in Sources */,
+				0C94FEA92A2DE18800AAFC32 /* HomeView.swift in Sources */,
 				0C0DF1B42A289AF600AAFC32 /* ContractInfo.swift in Sources */,
 				0C94FE9D2A2DCE6400AAFC32 /* AssetsView.swift in Sources */,
 				C1C996B72A1638B80011BF5D /* TorusWeb3Utils.swift in Sources */,
@@ -435,8 +445,10 @@
 				0C4CA1E42A2825CA00AAFC32 /* OrderResponse.swift in Sources */,
 				0C4CA1EB2A282AC300AAFC32 /* ResponseWrapper.swift in Sources */,
 				0C94FE972A2DC70000AAFC32 /* LiterallyEthKeyStorage.swift in Sources */,
+				0C94FEA42A2DDA9A00AAFC32 /* MarketplaceView.swift in Sources */,
 				0C4CA1E62A2825D200AAFC32 /* OrderInfoResponse.swift in Sources */,
 				0C4CA1E92A28287800AAFC32 /* ReddioApi.swift in Sources */,
+				0C94FEA62A2DDAC200AAFC32 /* AccountView.swift in Sources */,
 				0C94FE952A2DC47800AAFC32 /* Web3Client.swift in Sources */,
 				C1C996B82A1638B80011BF5D /* UserDetailView.swift in Sources */,
 				C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */,
@@ -600,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reddio-SDK-Example/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J37U7L93HG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "Reddio-SDK-Example";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -630,7 +642,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Reddio-SDK-Example/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J37U7L93HG;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "Reddio-SDK-Example";
 				GENERATE_INFOPLIST_FILE = YES;

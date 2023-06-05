@@ -12,7 +12,8 @@ import Web3Auth
 struct MainApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(vm: ViewModel())
+//            ContentView(vm: ViewModel())
+            HomeView()
         }
     }
 }

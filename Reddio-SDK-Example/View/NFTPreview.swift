@@ -21,7 +21,15 @@ struct NFTPreview: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: imageUrl)!).scaledToFit()
+            if imageUrl.count > 0 {
+                AsyncImage(url: URL(string: imageUrl)!) { image in
+                    image
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                } placeholder: {
+                    ProgressView()
+                }
+            }
             Text("Token ID: \(tokenId)")
         }.task {
             do {
