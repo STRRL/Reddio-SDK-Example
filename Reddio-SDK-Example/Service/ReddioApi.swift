@@ -55,8 +55,6 @@ func buyNFTReddio721(
     )
     let jsonString = try JSONEncoder().encode(jsonPayload)
 
-    print(String(data: jsonString, encoding: .utf8)!)
-
     var request = URLRequest(url: URL(string: "https://api-dev.reddio.com/v1/order")!, timeoutInterval: Double.infinity)
     request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type") // the request is JSON
     request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept") // the expected response is also JSON
@@ -138,10 +136,20 @@ func quantizedAmount(
     type: String,
     contractAddress: String
 ) async throws -> String {
-    let contractInfo = await try getContractInfo(type: type, contractAddress: contractAddress)
+    let contractInfo = try await getContractInfo(type: type, contractAddress: contractAddress)
 
     let amountDecimal = Decimal(string: amount)!
     let result = amountDecimal * Decimal(pow(Double(10), Double(contractInfo.decimals))) / Decimal(string: contractInfo.quantum)!
 
     return result.description
+}
+
+func fetchNFTMetaData(contractAddress: String, tokenId: String) async throws -> String {
+    let (responsBody, _) = try await URLSession.shared.data(from: URL(string:
+        "https://metadata.reddio.com/metadata?token_ids=\(tokenId)&contract_address=\(contractAddress)"
+    )!)
+    let json = try JSONSerialization.jsonObject(with: responsBody, options: []) as? [String: Any]
+    let data = json!["data"] as? [Any]
+    let imageUrl = (data![0] as? [String: Any])!["image"] as! String
+    return imageUrl
 }
