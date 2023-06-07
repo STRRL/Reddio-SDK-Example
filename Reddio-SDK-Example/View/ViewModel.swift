@@ -68,7 +68,7 @@ class ViewModel: ObservableObject {
                         dark: true, theme: ["primary": "#123456"]
                     )
                 ))
-                let result = try await self.web3Auth?
+                let result = try await web3Auth?
                     .login(W3ALoginParams(loginProvider: .GOOGLE))
                 await MainActor.run(body: {
                     user = result

@@ -7,7 +7,7 @@ public typealias Wei = BigUInt
 
 public enum TorusWeb3Utils {
     public static func timeMinToSec(val: Double) -> Double {
-        return val * 60
+        val * 60
     }
 
     // NOTE: calculate wei by 10^18
@@ -45,7 +45,7 @@ public enum TorusWeb3Utils {
 
     // Only used for calcurating gas price and gas limit.
     public static func toWei(GWei: Double) -> Wei {
-        return Wei(GWei * 1_000_000_000)
+        Wei(GWei * 1_000_000_000)
     }
 }
 
@@ -61,6 +61,6 @@ extension String {
     }
 
     func numberOfOccurrencesOf(string: String) -> Int {
-        return components(separatedBy: string).count - 1
+        components(separatedBy: string).count - 1
     }
 }

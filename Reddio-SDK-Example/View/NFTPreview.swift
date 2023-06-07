@@ -33,7 +33,7 @@ struct NFTPreview: View {
             Text("Token ID: \(tokenId)")
         }.task {
             do {
-                self.imageUrl = try await fetchNFTMetaData(contractAddress: self.contractAddress, tokenId: self.tokenId)
+                imageUrl = try await fetchNFTMetaData(contractAddress: contractAddress, tokenId: tokenId)
             } catch {}
         }
     }

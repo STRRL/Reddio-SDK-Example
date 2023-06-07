@@ -37,9 +37,9 @@ class Web3RPC: ObservableObject {
     }
 
     func checkLatestBlockChanged() async -> Bool {
-        return await withCheckedContinuation { continuation in
+        await withCheckedContinuation { continuation in
             client.eth_blockNumber { [weak self] _, val in
-                guard let val = val, self?.latestBlock != val else {
+                guard let val, self?.latestBlock != val else {
                     continuation.resume(returning: false)
                     return
                 }
@@ -56,7 +56,7 @@ class Web3RPC: ObservableObject {
                 return
             }
             let balance: () = client.eth_getBalance(address: self.address, block: .Latest) { [unowned self] error, val in
-                if let error = error {
+                if let error {
                     print(error)
                 }
                 let balance = TorusWeb3Utils.toEther(wei: Wei(val ?? 0))

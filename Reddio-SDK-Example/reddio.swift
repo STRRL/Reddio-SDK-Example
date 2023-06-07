@@ -40,9 +40,9 @@ class ReddioViewModel: ObservableObject {
         }
 
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
+            if let error {
                 print("Error: \(error)")
-            } else if let data = data {
+            } else if let data {
                 do {
                     // Convert the data to JSON
                     guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {

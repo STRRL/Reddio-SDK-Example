@@ -20,6 +20,6 @@ class LiterallyEthKeyStorage: EthereumKeyStorageProtocol {
     }
 
     func loadPrivateKey() throws -> Data {
-        return Data(hex: ethPrivateKey)
+        Data(hex: ethPrivateKey)
     }
 }

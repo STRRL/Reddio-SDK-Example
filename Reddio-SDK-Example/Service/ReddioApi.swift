@@ -153,3 +153,10 @@ func fetchNFTMetaData(contractAddress: String, tokenId: String) async throws -> 
     let imageUrl = (data![0] as? [String: Any])!["image"] as! String
     return imageUrl
 }
+
+func getBalance(starkKey: String) async throws -> [BalanceRecord] {
+    let url = "https://api-dev.reddio.com/v2/balances?stark_key=\(starkKey)"
+    let (data, _) = try await URLSession.shared.data(from: URL(string: url)!)
+    let responseBody = try JSONDecoder().decode(ResponseWrapper<[BalanceRecord]>.self, from: data)
+    return responseBody.data!
+}

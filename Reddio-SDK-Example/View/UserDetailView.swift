@@ -13,7 +13,7 @@ struct UserDetailView: View {
     @ObservedObject var reddioViewModel = ReddioViewModel()
 
     var body: some View {
-        if let user = user {
+        if let user {
             List {
                 Section {
                     Text("\(user.privKey ?? "")")

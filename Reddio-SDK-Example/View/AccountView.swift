@@ -42,10 +42,10 @@ struct AccountView: View {
 
         }.task {
             do {
-                self.ethAddress = self.web3Client.getAddress().value
-                self.starkKey = try self.web3Client.getStarkPublicKey()
-                self.ethPrivateKey = self.web3Client.getEthPrivateKey()
-                self.starkPrivateKey = try self.web3Client.getStarkPrivateKey()
+                ethAddress = web3Client.getAddress().value
+                starkKey = try web3Client.getStarkPublicKey()
+                ethPrivateKey = web3Client.getEthPrivateKey()
+                starkPrivateKey = try web3Client.getStarkPrivateKey()
             } catch {}
         }
     }
@@ -83,7 +83,7 @@ struct SecureInputView: View {
             Button(action: {
                 isSecured.toggle()
             }) {
-                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                Image(systemName: isSecured ? "eye.slash" : "eye")
                     .accentColor(.gray)
             }
         }
