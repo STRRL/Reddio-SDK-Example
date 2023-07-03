@@ -22,11 +22,13 @@ struct AccountView: View {
                 Section {
                     Text("ETH Addresss")
                     Text("\(ethAddress)")
+                        .textSelection(.enabled)
                 }
 
                 Section {
                     Text("Stark Key")
                     Text("\(starkKey)")
+                        .textSelection(.enabled)
                 }
 
                 Section {
