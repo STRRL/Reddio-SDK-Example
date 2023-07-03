@@ -87,13 +87,13 @@ class Web3Client {
     }
 
     func getStarkPrivateKey() throws -> String {
-        let typedData = TypedData(types: [
+        let typedData = try TypedData(types: [
             "EIP712Domain": [TypedVariable(name: "chainId", type: "uint256")],
             "reddio": [TypedVariable(name: "contents", type: "string")],
         ],
         primaryType: "reddio",
         domain: ["chainId": 5],
-        message: ["contents": try JSON(Web3Client.GENERATE_STARKKEY_MESSAGE)])
+        message: ["contents": JSON(Web3Client.GENERATE_STARKKEY_MESSAGE)])
         let signature = try ethAccount.signMessage(message: typedData)
         let result = try "0x" + (ReddioKit.getPrivateKeyFromEthSignature(ethSignature: signature))
         return result
@@ -102,6 +102,27 @@ class Web3Client {
     func getStarkPublicKey() throws -> String {
         let starkPrivateKey = try getStarkPrivateKey()
         return try "0x" + (ReddioKit.getPublicKey(privateKey: starkPrivateKey))
+    }
+
+    func buyNFT(contractAddress: String, tokenId: String, price: String) async throws {
+        try await buyNFTReddio721(
+            starkPrivateKey: getStarkPrivateKey(),
+            starkPublicKey: getStarkPublicKey(),
+            contractAddress: contractAddress,
+            tokenId: tokenId,
+            price: price
+        )
+    }
+
+    func sellNFT(contractAddress: String, tokenId: String, price: String) async throws {
+        let result = try await sellNFTReddio721(
+            starkPrivateKey: getStarkPrivateKey(),
+            starkPublicKey: getStarkPublicKey(),
+            contractAddress: contractAddress,
+            tokenId: tokenId,
+            price: price
+        )
+        print(result)
     }
 }
 

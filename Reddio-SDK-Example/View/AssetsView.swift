@@ -13,6 +13,13 @@ struct AssetsView: View {
     @Binding var erc20Balance: String
     @Binding var nftInventory: [NFT]
 
+    var web3Client: Web3Client?
+    var afterSellHook: () -> Void = {}
+
+    @State private var sellModalActive: Bool = false
+    @State private var nftToSellAddress: String? = nil
+    @State private var nftToSellTokenId: String? = nil
+
     var body: some View {
         List {
             Section {
@@ -30,22 +37,46 @@ struct AssetsView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top) {
                         ForEach(nftInventory, id: \NFT.tokenId) { item in
-                            NFTPreview(
+                            OwnedNFTPreview(
                                 contractAddress: item.contractAddress,
-                                tokenId: item.tokenId
+                                tokenId: item.tokenId,
+                                onSellButtonClick: {
+                                    contractAddress, tokenId in
+                                    nftToSellAddress = contractAddress
+                                    nftToSellTokenId = tokenId
+                                    sellModalActive = true
+                                }
                             )
                         }
                     }
                 }
             }
-        }.navigationTitle(title)
+        }
+        .navigationTitle(title)
+        .sheet(isPresented: $sellModalActive, content: {
+            if sellModalActive, nftToSellAddress != nil, nftToSellTokenId != nil {
+                SelllNFTView(
+                    contractAddress: nftToSellAddress!,
+                    tokenId: nftToSellTokenId!,
+                    web3Client: web3Client,
+                    afterSellHook: {
+                        afterSellHook()
+                        sellModalActive = false
+                    }
+                )
+                .presentationDetents([.fraction(0.5)])
+                .padding()
+            }
+        }).onDisappear {
+            afterSellHook()
+        }
     }
 }
 
 struct AssetsView_Previews: PreviewProvider {
     static var previews: some View {
         AssetsView(
-            title: .constant("Layer X Assets"),
+            title: .constant("Layer 2 Assets"),
             ethBalance: .constant("0.0041"),
             erc20Balance: .constant("400.0"),
             nftInventory: .constant([

@@ -23,42 +23,33 @@ struct ComposedAssetsView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                if isloading {
-                    ProgressView()
-                }
-
-                AssetsView(
-                    title: .constant(""),
-                    ethBalance: $layer2ETHBalance,
-                    erc20Balance: $layer2ERC20Balance,
-                    nftInventory: $layer2NFTs
-                )
-
-                Button("Refresh", action: {
+            AssetsView(
+                title: .constant("Assets"),
+                ethBalance: $layer2ETHBalance,
+                erc20Balance: $layer2ERC20Balance,
+                nftInventory: $layer2NFTs,
+                web3Client: web3Client,
+                afterSellHook: {
                     Task {
-                        isloading = true
-                        do {
-                            layer2ETHBalance = try await web3Client.fetchLayer2ETHBalance()
-                            layer2ERC20Balance = try await web3Client.fetchLayer2ERC20Balance()
-                            layer2NFTs = try await web3Client.fetchLayer2NFTs()
-                        } catch {
-                            print(error)
-                        }
-                        isloading = false
+                        await refresh()
                     }
-                })
-            }
+                }
+            )
         }.task {
-            do {
-                isloading = true
-                layer2ETHBalance = try await web3Client.fetchLayer2ETHBalance()
-                layer2ERC20Balance = try await web3Client.fetchLayer2ERC20Balance()
-                layer2NFTs = try await web3Client.fetchLayer2NFTs()
-            } catch {
-                print(error)
-            }
-            isloading = false
+            await refresh()
+        }
+        .refreshable {
+            await refresh()
+        }
+    }
+
+    func refresh() async {
+        do {
+            layer2ETHBalance = try await web3Client.fetchLayer2ETHBalance()
+            layer2ERC20Balance = try await web3Client.fetchLayer2ERC20Balance()
+            layer2NFTs = try await web3Client.fetchLayer2NFTs()
+        } catch {
+            print(error)
         }
     }
 }
