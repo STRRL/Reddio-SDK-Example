@@ -20,11 +20,13 @@ struct HomeView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            Text("Marketplace View")
-                .tabItem {
-                    Label("Marketplace", systemImage: "cart")
-                }
-                .tag(Tab.marketplace)
+            MarketplaceView(
+                web3Client: web3Client
+            )
+            .tabItem {
+                Label("Marketplace", systemImage: "cart")
+            }
+            .tag(Tab.marketplace)
 
             ComposedAssetsView(web3Client: web3Client)
                 .tabItem {

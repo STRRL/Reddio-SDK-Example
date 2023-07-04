@@ -1,18 +1,18 @@
 //
-//  SelllNFTView.swift
+//  BuyNFTModal.swift
 //  Reddio-SDK-Example
 //
-//  Created by STRRL on 2023/6/29.
+//  Created by STRRL on 2023/7/4.
 //
 
 import SwiftUI
 
-struct SelllNFTView: View {
+struct BuyNFTModal: View {
     var contractAddress: String
     var tokenId: String
+    var price: String = "0.001"
     var web3Client: Web3Client? = nil
-    var afterSellHook: () -> Void = {}
-    @State private var price: String = "0.001"
+    var afterBuyHook: () -> Void = {}
 
     var body: some View {
         VStack {
@@ -20,15 +20,15 @@ struct SelllNFTView: View {
                 contractAddress: contractAddress,
                 tokenId: tokenId
             )
-            TextField("price", text: $price)
+            Text(price + " ETH")
                 .textFieldStyle(.roundedBorder)
                 .onSubmit(of: .text) {}
 
-            Button("Sell") {
+            Button("Buy") {
                 Task {
                     do {
-                        try await web3Client?.sellNFT(contractAddress: contractAddress, tokenId: tokenId, price: price)
-                        afterSellHook()
+                        try await web3Client?.buyNFT(contractAddress: contractAddress, tokenId: tokenId, price: price)
+                        afterBuyHook()
                     } catch {
                         print(error)
                     }
@@ -39,22 +39,10 @@ struct SelllNFTView: View {
         }
         .padding()
     }
-
-    func sellNFT(price: String) async {
-        do {
-            try await web3Client!.sellNFT(
-                contractAddress: contractAddress,
-                tokenId: tokenId,
-                price: price
-            )
-        } catch {
-            print(error)
-        }
-    }
 }
 
 #Preview {
-    SelllNFTView(
+    BuyNFTModal(
         contractAddress: "0x941661bd1134dc7cc3d107bf006b8631f6e65ad5",
         tokenId: "3191",
         web3Client: nil

@@ -40,7 +40,6 @@ func buyNFTReddio721(
     starkPublicKey: String,
     contractAddress: String = REDDIO721_CONTRACT_ADDRESS,
     tokenId: String,
-
     price: String
 ) async throws -> OrderResponse {
     let jsonPayload = try await buildSignedBuyOrderMessage(
@@ -258,4 +257,13 @@ func getBalance(starkKey: String) async throws -> [BalanceRecord] {
     let (data, _) = try await URLSession.shared.data(from: URL(string: url)!)
     let responseBody = try JSONDecoder().decode(ResponseWrapper<[BalanceRecord]>.self, from: data)
     return responseBody.data!
+}
+
+func listForSaleNFT(contractAddress: String) async throws -> [ForSaleNFT] {
+    let url = "https://api-dev.reddio.com/v1/orders?contract_address=\(contractAddress)"
+
+    let (data, _) = try await URLSession.shared.data(from: URL(string: url)!)
+
+    let responseBody = try JSONDecoder().decode(ResponseWrapper<ForSaleNFTOrderResponse>.self, from: data)
+    return responseBody.data!.list
 }

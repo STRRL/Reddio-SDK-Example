@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C02A5072A53F01900969D7B /* ForSaleNFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02A5062A53F01900969D7B /* ForSaleNFT.swift */; };
+		0C02A5092A53F83300969D7B /* BuyNFTModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02A5082A53F83300969D7B /* BuyNFTModal.swift */; };
 		0C0DF1A22A2895B600AAFC32 /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = 0C0DF1A12A2895B600AAFC32 /* secp256k1 */; };
 		0C0DF1A42A2895FB00AAFC32 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = 0C0DF1A32A2895FB00AAFC32 /* BigInt */; };
 		0C0DF1A62A2895FB00AAFC32 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C0DF1A52A2895FB00AAFC32 /* CryptoSwift */; };
@@ -36,7 +38,7 @@
 		0CB5BE992A301C7400AAFC32 /* BalanceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5BE982A301C7400AAFC32 /* BalanceRecord.swift */; };
 		0CBBF75A2A4C574C00AAFC32 /* ForSaleNFTPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBBF7592A4C574C00AAFC32 /* ForSaleNFTPreview.swift */; };
 		0CBBF75C2A4C5DD300AAFC32 /* OwnedNFTPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBBF75B2A4C5DD300AAFC32 /* OwnedNFTPreview.swift */; };
-		0CBBF75E2A4D104200AAFC32 /* SelllNFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBBF75D2A4D104200AAFC32 /* SelllNFTView.swift */; };
+		0CBBF75E2A4D104200AAFC32 /* SelllNFTModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBBF75D2A4D104200AAFC32 /* SelllNFTModal.swift */; };
 		C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13036EB2A1BBD93000A5354 /* reddio.swift */; };
 		C180CC5D2A1D93F500F7FA69 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C180CC5C2A1D93F500F7FA69 /* Alamofire */; };
 		C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */; };
@@ -91,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C02A5062A53F01900969D7B /* ForSaleNFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForSaleNFT.swift; sourceTree = "<group>"; };
+		0C02A5082A53F83300969D7B /* BuyNFTModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyNFTModal.swift; sourceTree = "<group>"; };
 		0C0DF1B32A289AF600AAFC32 /* ContractInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractInfo.swift; sourceTree = "<group>"; };
 		0C4CA1E12A281ABC00AAFC32 /* OrderMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMessage.swift; sourceTree = "<group>"; };
 		0C4CA1E32A2825CA00AAFC32 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
@@ -110,7 +114,7 @@
 		0CB5BE982A301C7400AAFC32 /* BalanceRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRecord.swift; sourceTree = "<group>"; };
 		0CBBF7592A4C574C00AAFC32 /* ForSaleNFTPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForSaleNFTPreview.swift; sourceTree = "<group>"; };
 		0CBBF75B2A4C5DD300AAFC32 /* OwnedNFTPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedNFTPreview.swift; sourceTree = "<group>"; };
-		0CBBF75D2A4D104200AAFC32 /* SelllNFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelllNFTView.swift; sourceTree = "<group>"; };
+		0CBBF75D2A4D104200AAFC32 /* SelllNFTModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelllNFTModal.swift; sourceTree = "<group>"; };
 		C13036EB2A1BBD93000A5354 /* reddio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reddio.swift; sourceTree = "<group>"; };
 		C1C996772A160D240011BF5D /* Reddio-SDK-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddio-SDK-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C9967A2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddio_SDK_ExampleApp.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				0C4CA1EA2A282AC300AAFC32 /* ResponseWrapper.swift */,
 				0C0DF1B32A289AF600AAFC32 /* ContractInfo.swift */,
 				0CB5BE982A301C7400AAFC32 /* BalanceRecord.swift */,
+				0C02A5062A53F01900969D7B /* ForSaleNFT.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,7 +216,8 @@
 				0CB5BE962A2EDE8B00AAFC32 /* AssetSwitchView.swift */,
 				0CBBF7592A4C574C00AAFC32 /* ForSaleNFTPreview.swift */,
 				0CBBF75B2A4C5DD300AAFC32 /* OwnedNFTPreview.swift */,
-				0CBBF75D2A4D104200AAFC32 /* SelllNFTView.swift */,
+				0CBBF75D2A4D104200AAFC32 /* SelllNFTModal.swift */,
+				0C02A5082A53F83300969D7B /* BuyNFTModal.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -465,6 +471,8 @@
 				0C4CA1E42A2825CA00AAFC32 /* OrderResponse.swift in Sources */,
 				0C4CA1EB2A282AC300AAFC32 /* ResponseWrapper.swift in Sources */,
 				0C94FE972A2DC70000AAFC32 /* LiterallyEthKeyStorage.swift in Sources */,
+				0C02A5092A53F83300969D7B /* BuyNFTModal.swift in Sources */,
+				0C02A5072A53F01900969D7B /* ForSaleNFT.swift in Sources */,
 				0C94FEA42A2DDA9A00AAFC32 /* MarketplaceView.swift in Sources */,
 				0CBBF75C2A4C5DD300AAFC32 /* OwnedNFTPreview.swift in Sources */,
 				0C4CA1E62A2825D200AAFC32 /* OrderInfoResponse.swift in Sources */,
@@ -474,7 +482,7 @@
 				0C94FE952A2DC47800AAFC32 /* Web3Client.swift in Sources */,
 				C1C996B82A1638B80011BF5D /* UserDetailView.swift in Sources */,
 				C13036EC2A1BBD93000A5354 /* reddio.swift in Sources */,
-				0CBBF75E2A4D104200AAFC32 /* SelllNFTView.swift in Sources */,
+				0CBBF75E2A4D104200AAFC32 /* SelllNFTModal.swift in Sources */,
 				0CB5BE972A2EDE8B00AAFC32 /* AssetSwitchView.swift in Sources */,
 				C1C9967B2A160D240011BF5D /* Reddio_SDK_ExampleApp.swift in Sources */,
 				0C4CA1E22A281ABC00AAFC32 /* OrderMessage.swift in Sources */,

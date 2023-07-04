@@ -10,33 +10,18 @@ import SwiftUI
 struct ForSaleNFTPreview: View {
     var contractAddress: String
     var tokenId: String
-    var price: String
-    var web3Client: Web3Client?
-
-    init(contractAddress: String, tokenId: String, price: String, web3Client: Web3Client? = nil) {
-        self.contractAddress = contractAddress
-        self.tokenId = tokenId
-        self.price = price
-        self.web3Client = web3Client
-    }
+    var price: String = "0.001"
+    var onBuyButtonClick: (String, String, String) -> Void = { _, _, _ in }
 
     var body: some View {
         VStack {
             NFTPreview(contractAddress: contractAddress, tokenId: tokenId)
             Text(price + " ETH")
             Button(action: {
-                let task = Task {
-                    if web3Client == nil {
-                        return
-                    }
-                    do {
-                        try await web3Client!.buyNFT(contractAddress: contractAddress, tokenId: tokenId, price: price)
-                    } catch {}
-                }
-
+                onBuyButtonClick(contractAddress, tokenId, price)
             }, label: {
                 Text("Buy")
-            }).buttonStyle(.bordered)
+            }).buttonStyle(.borderedProminent)
         }
     }
 }

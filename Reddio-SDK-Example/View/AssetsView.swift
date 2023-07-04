@@ -55,13 +55,15 @@ struct AssetsView: View {
         .navigationTitle(title)
         .sheet(isPresented: $sellModalActive, content: {
             if sellModalActive, nftToSellAddress != nil, nftToSellTokenId != nil {
-                SelllNFTView(
+                SelllNFTModal(
                     contractAddress: nftToSellAddress!,
                     tokenId: nftToSellTokenId!,
                     web3Client: web3Client,
                     afterSellHook: {
                         afterSellHook()
                         sellModalActive = false
+                        nftToSellAddress = nil
+                        nftToSellTokenId = nil
                     }
                 )
                 .presentationDetents([.fraction(0.5)])
